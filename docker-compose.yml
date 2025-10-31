@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: notes-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: notesdb
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    container_name: notes-app
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/notesdb
+      SPRING_PROFILES_ACTIVE: docker
+
+volumes:
+  mongo_data:
