@@ -62,7 +62,7 @@ Create a Note
 POST http://localhost:8080/api/notes
 
 json
-Копировать код
+
 {
   "title": "Docker test note",
   "text": "Testing note creation",
@@ -71,7 +71,7 @@ json
 Response:
 
 json
-Копировать код
+
 {
   "id": "654f1c2e8bda5b1234f90d12",
   "title": "Docker test note",
@@ -85,7 +85,7 @@ GET http://localhost:8080/api/notes/{id}/stats
 Response:
 
 json
-Копировать код
+
 {
   "testing": 1,
   "note": 1,
@@ -100,18 +100,9 @@ docker compose down
 Remove containers and MongoDB data volume:
 
 bash
-Копировать код
+
 docker compose down --volumes
 🧾 Notes
 MongoDB data is stored in the mongo-data Docker volume
 
 You can rebuild the app at any time — data will persist unless you remove the volume
-
-Base package: com.example.testtask
-
-yaml
-Копировать код
-
----
-
-Хочешь, я сделаю короткую (одностраничную) версию — в виде «лаконичного README для технического зада
